@@ -15,6 +15,8 @@ A robust command and control framework designed for authorized penetration testi
 - **Multiple Network Testing Vectors** with adaptive rate limiting
 - **Client Health Monitoring** with heartbeat system
 
+The supplied User is `root:jDT38z7X82Ox`
+
 > ⚠️ **Important**: This framework is intended solely for authorized security testing, educational purposes, and legitimate security research. Always obtain proper authorization before testing any system. Unauthorized use may violate laws and regulations.
 
 | Startup | 
