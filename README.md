@@ -1,6 +1,8 @@
-# Secure C2 Framework
+# Gostress-V2 C2 Framework
 
-*Advanced Security C2 Framework for Authorized Testing*
+GostressV2: Just a simpler more chill, non-Tor version
+
+> This does support Proxys like Original the [Gostress-Enhanced ](https://github.com/Birdo1221/Gostress-Enhanced)
 
 ## 📌 Overview
 
