@@ -27,7 +27,7 @@ A robust command and control framework designed for authorized penetration testi
 
 | Users | Commands | Sys-Settings |
 |-------|----------|--------------|
-| ![Users](https://github.com/user-attachments/assets/5937982b-fe99-4e0f-a859-54ff94b187cd) | ![Commands](https://github.com/user-attachments/assets/092f24e0-f332-4496-b399-2b00b76908c9) | ![Sys-Setting](https://github.com/user-attachments/assets/50c66a61-8ca4-4def-b28c-cce4e08909c4) |
+| ![Users](https://github.com/user-attachments/assets/f8511390-9367-4d4a-9338-94dc9d007b87) | ![Commands](https://github.com/user-attachments/assets/c1259bb6-cf1b-4a85-8b30-5d6f960c92e0) | ![Sys-Setting](https://github.com/user-attachments/assets/9e4f4fca-3321-4685-bfed-caec01ac999e) |
 
 ## 🔥 Features
 
